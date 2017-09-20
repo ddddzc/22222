@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ARRAY</title>
+</head>
+<body>
+	<script>
+		let arr=[12,34,56,12,34,56,99,99]
+		newarr = new Array()
+        // for(let i=0;i<arr.length;i++){
+        // 	if(newarr.includes(arr[i])==false){
+        // 		newarr.push(arr[i])
+        // 	}
+        // }
+        for(let i=0;i<arr.length;i++){
+        	let x=true
+        	for(let j=i+1;j<arr.length;j++){
+                 if(arr[i]==arr[j]){
+                 	x=false
+                 	break;
+                 }
+        	}
+        	if(x==true){
+        		newarr.push(arr[i])
+        	}
+
+        }
+        console.log(newarr)
+        
+
+
+	</script>
+</body>
+</html>

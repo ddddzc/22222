@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <script>
+
+    	function replaceAll(str,str1){
+    		while(str.indexOf(str1) != -1){
+                str=str.replace(str1,'*')
+    		}
+    		return str
+    	}
+        
+        let str='12342234',str1='4'
+    	let A=replaceAll(str,str1)
+    	alert(A)
+    </script>
+	
+</body>
+</html>
