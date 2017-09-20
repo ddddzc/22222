@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	div{
+		width: 100px;
+		height: 100px;
+		background: #555;
+		margin: 30px auto;
+	}
+</style>
+<body>
+	<div></div>
+	<script>
+	    let x=document.getElementsByTagName('div')[0]
+		let t;
+		let change=10;
+	    t=setInterval(fn,10);
+	    function fn(){
+	    	let a=parseInt(getComputedStyle(x,null).width);
+	    	let b=parseInt(getComputedStyle(x,null).height);
+	    	x.style.width=`${a+change}px`
+	    	x.style.height=`${a+change}px`
+	    	if(a>500){
+	    		change=-10
+	    	}else if(a<10)
+	    	{
+	    		change=10
+	    	}
+
+	    }
+
+
+	</script>
+</body>
+</html>

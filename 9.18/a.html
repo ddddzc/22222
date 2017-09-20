@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+    li{
+    	margin-bottom: 10px;
+        margin-right: 10px;
+        list-style: none;
+        float: left;
+    }
+    ul li button{
+    	width: 100px;
+        height: 50px;
+        background: #039;
+        border:none;
+        color: #afd;
+        font-size: 35px;
+        text-align: center;
+    }
+    div{
+    	width: 280px;
+    	background: #333;
+    	transition: 0.5s
+    }
+
+</style>
+<body>
+	<ul>
+		<li><button id="up">上拉</button></li>
+		<li><button id="down">下拉</button></li>
+		<li><button id="updown"></button></li>
+	</ul>
+	<div id="menu"></div>
+	<script>
+	    
+	    let menu=document.getElementById('menu');
+		let up=document.getElementById('up');
+		up.onclick=function(){
+			menu.style.height='0px';
+		}
+		let down=document.getElementById('down');
+		down.onclick=function(){
+			menu.style.height='500px';
+		}
+		let updown=document.getElementById('updown');
+		let flag=true
+		updown.onclick=function(){
+			if(flag){
+				menu.style.height='500px';
+				
+				flag=false;
+
+			}else{
+				menu.style.height='0px';
+				
+				flag=true
+			}
+			
+		}
+
+	</script>
+</body>
+</html>

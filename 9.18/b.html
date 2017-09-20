@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	ul{
+		width: 200px;
+		height: 500px;
+	}
+	.item{
+
+	}
+</style>
+<body>
+	<ul class="aside">
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+	</ul>
+	<script>
+	let aside=document.getElementsByClassName('aside')[0]
+	let asides=aside.getElementsByTagName('li')
+	let item=document.getElementsByClassName('item')
+	for(let i=0;i<aside.length;i++){
+          
+	}
+
+
+
+
+
+
+
+	window.onload=function(){
+	let banner4=document.getElementsByClassName('banner4')[0]
+	let lis=banner4.getElementsByTagName('li')
+	let item=document.getElementsByClassName('item')
+	for (let i = 0; i < lis.length; i++) {
+		lis[i].onmousemove=function(){
+            item[i].style.display='block'
+		}
+		lis[i].onmouseout=function(){
+            item[i].style.display='none'
+		}
+	}
+
+	let first1=document.getElementsByClassName('first1')[0]
+	let lit=first1.getElementsByTagName('li')
+	let banner2=document.getElementsByClassName('banner2')[0]
+	let litt=banner2.getElementsByTagName('li')
+	// litt[1].onclick.style.zIndex=90;
+	for (let i = 0; i < lit.length; i++) {
+		litt[i].onclick=function(){
+			for (let j = 0; j < lit.length; j++){
+				lit[j].style.zIndex=0;
+			}
+			lit[i].style.zIndex=99;
+
+		}
+		// litt[i].onmouseout=function(){
+		// 	lit[i].style.zIndex=0;
+		// }
+	}
+}
+	</script>
+</body>
+</html>
