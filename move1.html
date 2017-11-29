@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+	.small{
+		width: 360px;
+		height: 240px;
+		float: left;
+		margin-right: 100px;
+		position: relative;
+	}
+	.zhezhao{
+		width: 30px;
+		height: 20px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: rgba(0, 0, 0, 0.5)
+
+	}
+	.fugai{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 99;
+
+	}
+	.small img{
+		width: 100%;
+		height: 100%;
+	}
+	.big{
+		width: 360px;
+		height: 240px;
+		float: left;
+		overflow: hidden;
+		position: relative;
+	}
+	.big img{
+		position: absolute;
+		left: 0;
+		top: 0;
+
+	}
+
+
+</style>
+<body>
+	<div class="small">
+		<div class="fugai"></div>
+	
+		<img src="google-earth-view-2430.jpg" alt="">
+	</div>
+	<div class="zhezhao"></div>
+	<div class="big"><img src="google-earth-view-2430.jpg" alt=""></div>
+</body>
+<script>
+    let zhezhao =document.querySelector('.zhezhao'); 
+    let small =document.querySelector('.small'); 
+    let big =document.querySelector('.big img');
+    let zzw=zhezhao.offsetWidth
+        zzh=zhezhao.offsetHeight
+        sw=small.offsetWidth
+        sh=small.offsetHeight
+        bw=big.offsetWidth
+        bh=big.offsetHeight
+    small.onmousemove=function(e){
+        let ox=e.offsetX-zzw/2 ,oy=e.offsetY-zzh/2;
+        
+
+        if(ox>=sw-zzw){
+        	ox=sw-zzw
+        }
+        if(ox<=0){
+        	ox=0
+        }
+        if(oy>=sh-zzh){
+        	oy=sh-zzh
+        }
+        if(oy<=0){
+        	oy=0
+        }
+        zhezhao.style.left=`${ox}px`
+        zhezhao.style.top=`${oy}px`
+        
+        big.style.width=`${sw*sw/zzw}px`
+        big.style.heigth=`${sh*sh/zzh}px`
+        
+         big.style.left=`${-ox*sw/zzw}px`
+         big.style.top=`${-oy*sh/zzh}px`
+        console.log(big.style.left)
+        console.log(big.style.top)
+
+        // console.log(big.style.left>='-500px')
+        // console.log(big.style.left)
+        // if(big.style.left>='-500px'){
+        // 	big.style.left='-500px'
+        // }
+        // if(big.style.top>='-300px'){
+        // 	big.style.top='-300px'
+        // }
+        
+        
+    }
+    
+</script>
+</html>
